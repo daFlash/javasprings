@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="e" uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +10,12 @@
 	<center>
 		<h2>Hello World</h2>
 		<h2>
-			${message} ${name}
+			${message}<br/> Dynamic #1 - <e:forHtml value="${name}" /> <br/>
+			Dynamic#2 - ${e:forHtml(name)} <br/>
+			This is done from controller <br />
+			Dynamic #3 - ${modifiedName}
+			<!-- ${name}  -->
+			<!-- <e:forHtml value="${name}" /> -->
 		</h2>
 	</center>
 </body>
